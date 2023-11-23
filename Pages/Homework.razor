@@ -1,8 +1,8 @@
 ﻿@page "/homework"
-@page "/homework-parametr/{header?}"
+@page "/homework-parameter/{header?}"
 
 <PageTitle>Homework</PageTitle>
 
-<h1>@Header</h1>
+<h1>@(Header??"Praca domowa")</h1>
 
 <button type="button" class="btn btn-secondary" @onclick="BackHome">Home</button>

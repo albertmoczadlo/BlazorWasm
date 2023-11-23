@@ -11,12 +11,7 @@ namespace BlazorWasm.Pages
         public NavigationManager NavigationManager { get; set; }
 
         [Parameter]
-        public string Header
-        {
-            get =>_header;
-
-            set => _header= string.IsNullOrWhiteSpace(value)?"Praca domowa":value;
-        }
+        public string Header { get; set; }
 
         private void BackHome()
         {

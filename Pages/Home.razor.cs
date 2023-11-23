@@ -8,7 +8,7 @@ namespace BlazorWasm.Pages
         public NavigationManager NavigationManager { get; set; }
         private void BackHomework()
         {
-            NavigationManager.NavigateTo("/homework-parametr/parametr");
+            NavigationManager.NavigateTo("/homework-parameter/parameter");
         }
     }
 }
