@@ -8,14 +8,13 @@
         {
             try
             {
-                throw new Exception("This is a test exception.");
+                //throw new Exception("This is a test exception.");
+                currentCount++;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-
-            currentCount++;
         }
     }
 }
