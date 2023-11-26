@@ -12,6 +12,19 @@
 
 <button class="btn btn-info btn-lg mt-3" @onclick="ShowResultJs">Wyświetl wynik</button>
 
+<br/>
+
+<button class="btn btn-dark btn-lg mt-3" @onclick="ShowResultCSharp">Wyświetl wynik (JavaScript/C#)</button>
+
+<br />
+
+<button class="btn btn-dark btn-lg mt-3" @onclick="ShowDate">Wyświetl date</button>
+
+@if(!string.IsNullOrWhiteSpace(_currentDate))
+{
+    <p class="text-info mt-2">Aktualna data: @_currentDate</p>
+}
+
 @if (_isConfigDialogVisible)
 {
     <p class="text-success mt-2">Potwierdzono</p>
