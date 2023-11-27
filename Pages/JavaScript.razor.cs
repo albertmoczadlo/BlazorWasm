@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using BlazorWasm.Services;
+using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 
 namespace BlazorWasm.Pages
@@ -9,6 +10,10 @@ namespace BlazorWasm.Pages
         private string _currentDate = "";
         [Inject]
         public IJSRuntime JS { get; set; }
+
+        [Inject]
+        public ToastService ToastService { get; set; }
+
 
         private async Task CallJs()
         {
@@ -45,6 +50,16 @@ namespace BlazorWasm.Pages
         private async Task ShowDate()
         {
             _currentDate = await JS.InvokeAsync<string>("getCurrentDateCSharp");
+        }
+
+        private async Task ShowToastrNotification()
+        {
+            await ToastService.ShowInfoMessage("Hello World");
+        }
+
+        private async Task ChangeBackgroundColor()
+        {
+            await JS.InvokeVoidAsync("changeBackgroundColor");
         }
     }
 }
