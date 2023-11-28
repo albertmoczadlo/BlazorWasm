@@ -1,0 +1,26 @@
+﻿@page "/component"
+
+<h3 class="mb-2">Komponenty</h3>
+
+@* <Card
+    Image="/files/Jan-kowalski.png"
+    BtnText="Więcej"
+    Title="Jan Kowalski"
+      Content="Gdy słońce zachodzi nad horyzontem, miasto ożywa barwami, dźwiękami
+                i ruchem, tworząc niezapomnianą atmosferę pełną życia i energii.">
+</Card> *@
+
+<div class="d-flex gap-2">
+
+    @foreach (var item in _authors)
+    {
+        <Card Image="@item.Image"
+              Title="@item.Title"
+              BtnText="@item.BtnText"
+              Content="@item.Content">
+          </Card>
+    }
+
+</div>
+
+
