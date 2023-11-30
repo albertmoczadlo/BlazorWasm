@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 
 namespace BlazorWasm.Components
 {
@@ -8,14 +9,20 @@ namespace BlazorWasm.Components
         public string Image { get; set; }
 
         [Parameter]
-        public string Title { get; set; }
+        public RenderFragment Title { get; set; }
 
         [Parameter]
-        public string Content { get; set; }
+        public RenderFragment Content { get; set; }
 
         [Parameter]
         public string BtnText { get; set; }
 
+        [Parameter]
+        public EventCallback OnClickMore { get; set; }
 
+        private void ClickMore(MouseEventArgs e)
+        {
+            OnClickMore.InvokeAsync();
+        }
     }
 }
