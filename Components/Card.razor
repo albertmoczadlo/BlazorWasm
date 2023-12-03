@@ -1,18 +1,20 @@
-﻿@* <div class="card" style="width: 18rem;">
+﻿
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="@Image" alt="@Title">
+        <div class="card-body">
+            <h5 class="card-title">@Title</h5>
+            <p class="card-text">@Content</p>
+            <button @onclick="ClickMore" @attributes="BtnAttributes">@BtnText</button>
+        </div>
+    </div>
+
+
+@* ﻿<div class="card" style="width: 18rem;">
     <img class="card-img-top" src="@Image" alt="@Title">
     <div class="card-body">
         <h5 class="card-title">@Title</h5>
         <p class="card-text">@Content</p>
-        <button @onclick="ClickMore" class="btn btn-primary">@BtnText</button>
+        <button @onclick = "ClickMore" @attributes = "BtnAttributes">@BtnText</button>
     </div>
 </div> *@
-
-﻿<div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="@Image" alt="@Title">
-    <div class="card-body">
-        <h5 class="card-title">@Title</h5>
-        <p class="card-text">@Content</p>
-        <button @onclick = "ClickMore" class="btn btn-primary">@BtnText</button>
-    </div>
-</div>
 

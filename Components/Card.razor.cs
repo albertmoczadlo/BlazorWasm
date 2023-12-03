@@ -20,6 +20,21 @@ namespace BlazorWasm.Components
         [Parameter]
         public EventCallback OnClickMore { get; set; }
 
+        [Parameter]
+        public string Style { get; set; }
+
+        [Parameter]
+        public bool BtnDisable { get; set; }
+
+        [Parameter]
+        public string BtnTitle { get; set; }
+
+        [Parameter]
+        public string BtnClass { get; set; }
+
+        [Parameter(CaptureUnmatchedValues = true)]
+        public Dictionary<string,object> BtnAttributes { get; set; }
+
         private void ClickMore(MouseEventArgs e)
         {
             OnClickMore.InvokeAsync();

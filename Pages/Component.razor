@@ -1,10 +1,10 @@
 ﻿@page "/component"
 
 <h3 class="mb-2">Komponenty</h3>
-
+@* 
 <Card
     Image="/files/Jan-kowalski.png"
-    BtnText="Więcej">
+    BtnAttributes="_cardsAttribute">
     <Title>
         <b> Jan Kowalski </b>
     </Title>
@@ -12,7 +12,7 @@
         <p> Jan Kowalski (ur. 1 stycznia 1990 w Warszawie) – polski aktor teatralny, filmowy i telewizyjny, reżyser teatralny, pedagog. </p>
     </Content>
 
-</Card>
+</Card> *@
 
 
 
@@ -22,10 +22,9 @@
     {
         <Card
             Image="@item.Image"
-            Title="item.Title"
-            BtnText="@item.BtnText"
-            Content="@item.Content"
-            OnClickMore="ClickMore">
+            BtnAttributes="_cardsAttribute">
+            <Title>@item.Title</Title>
+            <Content>@item.Content</Content>
 
         </Card>
     }

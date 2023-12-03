@@ -38,5 +38,13 @@ namespace BlazorWasm.Pages
         {
             NavigationManager.NavigateTo("/");
         }
+
+        private Dictionary<string, object> _cardsAttribute = new()
+        {
+            { "class", "btn btn-primary" },
+            { "type", "button" },
+            { "disabled", "false" },
+            { "title", "Więcej" }
+        };
     }
 }
