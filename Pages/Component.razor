@@ -1,34 +1,39 @@
 ﻿@page "/component"
 
 <h3 class="mb-2">Komponenty</h3>
-@* 
-<Card
-    Image="/files/Jan-kowalski.png"
-    BtnAttributes="_cardsAttribute">
-    <Title>
-        <b> Jan Kowalski </b>
-    </Title>
-    <Content>
-        <p> Jan Kowalski (ur. 1 stycznia 1990 w Warszawie) – polski aktor teatralny, filmowy i telewizyjny, reżyser teatralny, pedagog. </p>
-    </Content>
-
-</Card> *@
 
 
-
-<div class="d-flex gap-2">
+@* <div class="d-flex gap-2">
 
     @foreach (var item in _authors)
     {
         <Card
             Image="@item.Image"
-            BtnAttributes="_cardsAttribute">
+              BtnAttributes="_cardsAttribute">
             <Title>@item.Title</Title>
             <Content>@item.Content</Content>
 
         </Card>
     }
 
-</div>
+</div> *@
+
+<Card @ref="_card"
+      Image="/files/Jan-kowalski.png"
+      BtnText="@_btnText"
+      OnClickMore="ClickMore"
+      BtnAttributes="_cardBtnAttributes">
+    <Title>
+        <b>Jan Kowalski</b>
+    </Title>
+    <Content>
+        <u>Programista C#/.NET</u> z 20 letnim doświadczeniem.<br />
+        <u>Specjalizacje:</u>
+        <ul>
+            <li>Blazor</li>
+            <li>ASP.NET Core</li>
+        </ul>
+    </Content>
+</Card>
 
 

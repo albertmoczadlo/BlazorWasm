@@ -1,10 +1,16 @@
-﻿using BlazorWasm.Models;
+﻿using BlazorWasm.Components;
+using BlazorWasm.Models;
 using Microsoft.AspNetCore.Components;
 
 namespace BlazorWasm.Pages
 {
     public partial class Component
     {
+        private string _info = "Komunikat 123";
+        private string _title = "Tytuł!";
+        private string _btnText = "Więcej";
+        private Card _card;
+
         public List<CardModel> _authors = new List<CardModel>()
         {
               new CardModel
@@ -39,12 +45,21 @@ namespace BlazorWasm.Pages
             NavigationManager.NavigateTo("/");
         }
 
-        private Dictionary<string, object> _cardsAttribute = new()
+        private Dictionary<string, object> _cardBtnAttributes = new Dictionary<string, object>
         {
             { "class", "btn btn-primary" },
             { "type", "button" },
-            { "disabled", "false" },
-            { "title", "Więcej" }
+            { "disabled", false },
+            { "title", "Więcej informacji" }
         };
+
+
+        //private Dictionary<string, object> _cardsAttribute = new()
+        //{
+        //    { "class", "btn btn-success" },
+        //    { "type", "button" },
+        //    { "disabled", false },
+        //    { "title", "Więcej" }
+        //};
     }
 }
