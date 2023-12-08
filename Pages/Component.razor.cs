@@ -11,33 +11,35 @@ namespace BlazorWasm.Pages
         private string _btnText = "Więcej";
         private Card _card;
 
-        public List<CardModel> _authors = new List<CardModel>()
-        {
-              new CardModel
-            {
-                Title = "Krzysztof Klos",
-                 Content = "Podczas spaceru przez stary las, pełen tajemniczych dźwięków " +
+        private List<CardModel> _authors = [
+
+                new CardModel
+                {
+                    Title = "Krzysztof Klos",
+                    Content = "Podczas spaceru przez stary las, pełen tajemniczych dźwięków " +
                 "i zapachów, poczułem niesamowitą bliskość z naturą i jej pięknem.",
-                Image = "/files/Krzysztof.png",
-                BtnText = "Więcej"
-            },
-             new CardModel
-             {
-                Title = "Jan Kowalski",
-                Content = "Podczas spaceru przez stary las, pełen tajemniczych dźwięków " +
-                "i zapachów, poczułem niesamowitą bliskość z naturą i jej pięknem.",
-                Image = "/files/Jan-kowalski.png",
-                BtnText = "Więcej"
-            },
-              new CardModel
-              {
-                Title = "Olo Golk",
-                Content = "Podczas spaceru przez stary las, pełen tajemniczych dźwięków " +
-                "i zapachów, poczułem niesamowitą bliskość z naturą i jej pięknem.",
-                Image = "/files/Olo.png",
-                BtnText = "Więcej"
-            }
-        };
+                    Image = "/files/Krzysztof.png",
+                    BtnText = "Więcej"
+                },
+                new CardModel
+                {
+                    Title = "Jan Kowalski",
+                    Content = "Podczas spaceru przez stary las, pełen tajemniczych dźwięków " +
+                    "i zapachów, poczułem niesamowitą bliskość z naturą i jej pięknem.",
+                    Image = "/files/Jan-kowalski.png",
+                    BtnText = "Więcej"
+                },
+                new CardModel
+                {
+                    Title = "Olo Golk",
+                    Content = "Podczas spaceru przez stary las, pełen tajemniczych dźwięków " +
+                    "i zapachów, poczułem niesamowitą bliskość z naturą i jej pięknem.",
+                    Image = "/files/Olo.png",
+                    BtnText = "Więcej"
+                }
+
+        ];
+
 
         public NavigationManager NavigationManager { get; set; }
         private void ClickMore()
@@ -45,21 +47,14 @@ namespace BlazorWasm.Pages
             NavigationManager.NavigateTo("/");
         }
 
-        private Dictionary<string, object> _cardBtnAttributes = new Dictionary<string, object>
-        {
-            { "class", "btn btn-primary" },
-            { "type", "button" },
-            { "disabled", false },
-            { "title", "Więcej informacji" }
-        };
-
-
-        //private Dictionary<string, object> _cardsAttribute = new()
+        //private Dictionary<string, object> _cardBtnAttributes = new Dictionary<string, object>
         //{
-        //    { "class", "btn btn-success" },
+        //    { "class", "btn btn-primary" },
         //    { "type", "button" },
         //    { "disabled", false },
-        //    { "title", "Więcej" }
+        //    { "title", "Więcej informacji" }
         //};
+
+
     }
 }

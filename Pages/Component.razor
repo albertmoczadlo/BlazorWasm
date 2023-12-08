@@ -2,38 +2,25 @@
 
 <h3 class="mb-2">Komponenty</h3>
 
+<Card
+      Image="/files/kowalski.png"
+      Title="Jan Kowalski"
+      BtnText="Więcej"
+      Content="Some quick example text to build on the card title and make up the bulk of the card's content.">
+</Card>
 
-@* <div class="d-flex gap-2">
-
+<div class="d-flex gap-2">
     @foreach (var item in _authors)
     {
-        <Card
-            Image="@item.Image"
-              BtnAttributes="_cardsAttribute">
-            <Title>@item.Title</Title>
-            <Content>@item.Content</Content>
+        <Card Image="@item.Image"
+              BtnText="@item.BtnText"
+              Title="@item.Title"
+              Content="@item.Content">
 
         </Card>
     }
+</div>
 
-</div> *@
 
-<Card @ref="_card"
-      Image="/files/Jan-kowalski.png"
-      BtnText="@_btnText"
-      OnClickMore="ClickMore"
-      BtnAttributes="_cardBtnAttributes">
-    <Title>
-        <b>Jan Kowalski</b>
-    </Title>
-    <Content>
-        <u>Programista C#/.NET</u> z 20 letnim doświadczeniem.<br />
-        <u>Specjalizacje:</u>
-        <ul>
-            <li>Blazor</li>
-            <li>ASP.NET Core</li>
-        </ul>
-    </Content>
-</Card>
 
 
