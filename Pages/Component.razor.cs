@@ -10,6 +10,7 @@ namespace BlazorWasm.Pages
         private string _title = "Tytuł!";
         private string _btnText = "Więcej";
         private Card _card;
+        public NavigationManager NavigationManager { get; set; }
 
         private List<CardModel> _authors = [
 
@@ -18,7 +19,7 @@ namespace BlazorWasm.Pages
                     Title = "Krzysztof Klos",
                     Content = "Podczas spaceru przez stary las, pełen tajemniczych dźwięków " +
                 "i zapachów, poczułem niesamowitą bliskość z naturą i jej pięknem.",
-                    Image = "/files/Krzysztof.png",
+                    Image = "/files/kowalski.png",
                     BtnText = "Więcej"
                 },
                 new CardModel
@@ -26,7 +27,7 @@ namespace BlazorWasm.Pages
                     Title = "Jan Kowalski",
                     Content = "Podczas spaceru przez stary las, pełen tajemniczych dźwięków " +
                     "i zapachów, poczułem niesamowitą bliskość z naturą i jej pięknem.",
-                    Image = "/files/Jan-kowalski.png",
+                    Image = "/files/kwiatkowski.png",
                     BtnText = "Więcej"
                 },
                 new CardModel
@@ -34,14 +35,12 @@ namespace BlazorWasm.Pages
                     Title = "Olo Golk",
                     Content = "Podczas spaceru przez stary las, pełen tajemniczych dźwięków " +
                     "i zapachów, poczułem niesamowitą bliskość z naturą i jej pięknem.",
-                    Image = "/files/Olo.png",
+                    Image = "/files/nowak.png",
                     BtnText = "Więcej"
                 }
 
         ];
 
-
-        public NavigationManager NavigationManager { get; set; }
         private void ClickMore()
         {
             NavigationManager.NavigateTo("/");

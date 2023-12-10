@@ -9,14 +9,14 @@
       Content="Some quick example text to build on the card title and make up the bulk of the card's content.">
 </Card>
 
-<div class="d-flex gap-2">
+<div class="d-flex gap-2 mt-2">
     @foreach (var item in _authors)
     {
         <Card Image="@item.Image"
               BtnText="@item.BtnText"
               Title="@item.Title"
-              Content="@item.Content">
-
+              Content="@item.Content"
+              OnClickMore="ClickMore">
         </Card>
     }
 </div>
