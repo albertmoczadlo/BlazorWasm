@@ -10,6 +10,8 @@ namespace BlazorWasm.Pages
         private string _title = "Tytuł!";
         private string _btnText = "Więcej";
         private Card _card;
+
+        [Inject]
         public NavigationManager NavigationManager { get; set; }
 
         private List<CardModel> _authors = [
