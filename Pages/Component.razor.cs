@@ -11,6 +11,22 @@ namespace BlazorWasm.Pages
         private string _btnText = "Więcej";
         private Card _card;
 
+        private Dictionary<string, object> _cardBtnAttributes = new()
+        {
+            { "class", "btn btn-success" },
+            { "type", "button" },
+            { "disabled", false },
+            { "title", "Więcej" }
+        };
+
+        private Dictionary<string, object> _cardAttributes = new()
+        {
+            { "B", "btn btn-primary" },
+            { "type", "button" },
+            { "disabled", false },
+            { "title", "Więcej informacji" }
+        };
+
         [Inject]
         public NavigationManager NavigationManager { get; set; }
 

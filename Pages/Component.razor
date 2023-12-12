@@ -2,12 +2,16 @@
 
 <h3 class="mb-2">Komponenty</h3>
 
-<Card
-      Image="/files/kowalski.png"
-      Title="Jan Kowalski"
+<Card Image="/files/kowalski.png"
       BtnText="Więcej"
       Content="Some quick example text to build on the card title and make up the bulk of the card's content."
-      OnClickMore="ClickMore">
+      OnClickMore="ClickMore"
+      BtnAttributes="_cardBtnAttributes"  >
+
+    <Title>
+        <b>Jan Kowalski</b>
+    </Title>
+
 </Card>
 
 <div class="d-flex gap-2 mt-2">
@@ -15,9 +19,12 @@
     {
         <Card Image="@item.Image"
               BtnText="@item.BtnText"
-              Title="@item.Title"
               Content="@item.Content"
-              OnClickMore="ClickMore">
+              OnClickMore="ClickMore"
+              BtnAttributes="_cardBtnAttributes"  >
+              <Title>
+                <b>@item.Title</b>
+              </Title/>
         </Card>
     }
 </div>

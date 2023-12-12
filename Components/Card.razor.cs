@@ -9,7 +9,7 @@ namespace BlazorWasm.Components
         public string Image { get; set; }
 
         [Parameter]
-        public string Title { get; set; }
+        public RenderFragment Title { get; set; }
 
         [Parameter]
         public string BtnText { get; set; }
@@ -19,6 +19,21 @@ namespace BlazorWasm.Components
 
         [Parameter]
         public EventCallback OnClickMore { get; set; }
+
+        [Parameter]
+        public string Style { get; set; }
+
+        [Parameter]
+        public string BtnClass { get; set; } = "btn btn-danger";
+
+        [Parameter]
+        public bool BtnDisable { get; set; }
+
+        [Parameter]
+        public string BtnTitle { get; set; }
+
+        [Parameter(CaptureUnmatchedValues = true)]
+        public Dictionary<string,object> BtnAttributes { get; set; }
 
         private void ClickMore(MouseEventArgs e)
         {
