@@ -2,6 +2,24 @@
 
 <h3 class="mb-2">Komponenty</h3>
 
+<Modal
+    Show="_showDialog"
+    OnAccept="ModalAccept"
+    OnCancel="ModalCancel">
+    <Title>
+        Potwierdź
+    </Title>
+    <Body>
+        Czy na pewno chcesz usunąć?
+    </Body>
+</Modal>
+
+<br />
+
+<button class="btn btn-danger my-2" @onclick="ShowDialog">
+    Pokaż okno modalne
+</button>
+
 <Card Image="/files/kowalski.png"
       BtnText="Więcej"
       Content="Some quick example text to build on the card title and make up the bulk of the card's content."

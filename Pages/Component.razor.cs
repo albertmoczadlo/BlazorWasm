@@ -1,6 +1,7 @@
 ﻿using BlazorWasm.Components;
 using BlazorWasm.Models;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 
 namespace BlazorWasm.Pages
 {
@@ -10,6 +11,7 @@ namespace BlazorWasm.Pages
         private string _title = "Tytuł!";
         private string _btnText = "Więcej";
         private Card _card;
+        private bool _showDialog = false;
 
         private Dictionary<string, object> _cardBtnAttributes = new()
         {
@@ -62,6 +64,23 @@ namespace BlazorWasm.Pages
         private void ClickMore()
         {
             NavigationManager.NavigateTo("/");
+        }
+
+        private void ShowDialog()
+        {
+            _showDialog = true;
+        }
+
+        private void ModalAccept(MouseEventArgs e)
+        {
+            //logika
+            Console.WriteLine("Operacja została zatwierdzona!!!!!");
+            _showDialog = false;
+        }
+
+        private void ModalCancel(MouseEventArgs e)
+        {
+            _showDialog = false;
         }
 
         //private Dictionary<string, object> _cardBtnAttributes = new Dictionary<string, object>
