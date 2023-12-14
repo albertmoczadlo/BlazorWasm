@@ -10,6 +10,7 @@ namespace BlazorWasm.Pages
         [Inject]
         public ToastService ToastService { get; set; }
 
+        private bool _isLoading = false;
         private Employee _employee = new Employee()
         {
             DateOfEmployment = DateTime.Now
@@ -26,15 +27,27 @@ namespace BlazorWasm.Pages
 
         private async Task Save()
         {
-            var json = JsonConvert.SerializeObject(_employee);
 
-            await ToastService.ShowInfoMessage($"Dane zostały zapisane. " +
-                $"Użytkownik: {json}");
-
-            _employee = new Employee()
+            try
             {
-                DateOfEmployment = DateTime.Now
-            };
+                _isLoading = true;
+
+                await Task.Delay(3000);
+
+                var json = JsonConvert.SerializeObject(_employee);
+
+                await ToastService.ShowInfoMessage($"Dane zostały zapisane. " +
+                    $"Użytkownik: {json}");
+
+                _employee = new Employee()
+                {
+                    DateOfEmployment = DateTime.Now
+                };
+            }
+            finally
+            {
+                _isLoading = false;
+            }
 
         }
     }
