@@ -1,9 +1,41 @@
 ﻿using BlazorWasm.Models;
+using BlazorWasm.Services;
+using Microsoft.AspNetCore.Components;
+using Newtonsoft.Json;
 
 namespace BlazorWasm.Pages
 {
     public partial class Forms
     {
-        private Employee _employee = new();
+        [Inject]
+        public ToastService ToastService { get; set; }
+
+        private Employee _employee = new Employee()
+        {
+            DateOfEmployment = DateTime.Now
+        };
+
+        private IEnumerable<Position> _positions =
+
+        [
+            new Position { Id = 1, Name = "IT" },
+            new Position { Id = 2, Name = "Kierownik" },
+            new Position { Id = 3, Name = "Kierowca" },
+            new Position { Id = 4, Name = "Magazynier" }
+        ];
+
+        private async Task Save()
+        {
+            var json = JsonConvert.SerializeObject(_employee);
+
+            await ToastService.ShowInfoMessage($"Dane zostały zapisane. " +
+                $"Użytkownik: {json}");
+
+            _employee = new Employee()
+            {
+                DateOfEmployment = DateTime.Now
+            };
+
+        }
     }
 }

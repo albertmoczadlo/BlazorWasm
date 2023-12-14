@@ -5,7 +5,50 @@
 <div class="row my-4">
     <h4>Nowy pracownik</h4>
     <div class="col-6">
-        <EditForm Model="_employee">
+        <EditForm Model="_employee" OnSubmit="Save">
+
+            <div class="form-group mt-3">
+                <label class="form-label">Nazwa</label>
+                <InputText @bind-Value="_employee.Name" class="form-control"/>
+            </div>
+
+            <div class="form-group mt-3">
+                <label class="form-label">Notatki</label>
+                <InputTextArea @bind-Value="_employee.Notes" class="form-control rows-4" />
+            </div>
+
+            <div class="form-group mt-3">
+                <label class="form-label">Wynagrodzenie</label>
+                <InputNumber @bind-Value="_employee.Salary" class="form-control rows-4" />
+            </div>
+
+            <div class="form-check mt-3">
+                <InputCheckbox @bind-Value="_employee.IsNew" />
+                <label class="form-check-label">Czy nowy pracownik?</label>
+            </div>
+
+            <div class="form-group mt-3">
+                <label class="form-select">Stanowisko</label>
+                <InputSelect @bind-Value="_employee.PositionId" class="form-control rows-4" >
+
+                    <option value="0" disabled="disabled" selected>-- Wybierz stanowisko --</option>
+
+                    @foreach (var item in _positions)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+
+                </InputSelect>
+            </div>
+
+            <div class="form-group mt-3">
+                <label class="form-label">Data zatrudnienie</label>
+                <InputDate @bind-Value="_employee.DateOfEmployment" class="form-control rows-4" />
+            </div>
+
+            <div class="form-group mt-3">
+               <button class="btn btn-primary btn-lg">Zapisz</button>
+            </div>
 
         </EditForm>
     </div>
